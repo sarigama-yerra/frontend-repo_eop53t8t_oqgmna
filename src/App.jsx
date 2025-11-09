@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import Hero from "./components/Hero";
+import Story from "./components/Story";
+import Schedule from "./components/Schedule";
+import RSVP from "./components/RSVP";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen text-gray-900 bg-gradient-to-b from-white via-rose-50/40 to-amber-50/30">
+      <header className="sticky top-0 z-50 backdrop-blur bg-white/60 border-b border-rose-100">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <a href="#home" className="font-semibold tracking-tight text-gray-900">Ava & Noah</a>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-700">
+            <a href="#story" className="hover:text-rose-600">Story</a>
+            <a href="#schedule" className="hover:text-rose-600">Schedule</a>
+            <a href="#rsvp" className="hover:text-rose-600">RSVP</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Story />
+        <Schedule />
+        <RSVP />
+      </main>
+
+      <footer className="border-t border-rose-100">
+        <div className="max-w-6xl mx-auto px-6 py-10 text-center text-sm text-gray-600">
+          Made with love • © {new Date().getFullYear()}
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
